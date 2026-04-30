@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="200" viewBox="0 0 780 200">
+  <defs>
+    <style>
+      .box { rx: 8; ry: 8; }
+      .label { font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif; font-size: 13px; font-weight: 600; text-anchor: middle; fill: #cdd6f4; }
+      .sublabel { font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif; font-size: 11px; text-anchor: middle; fill: #a6adc8; }
+      .arrow { stroke: #585b70; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+      .arrow-label { font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif; font-size: 10px; text-anchor: middle; fill: #585b70; }
+    </style>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#585b70"/>
+    </marker>
+  </defs>
+
+  <rect width="780" height="200" fill="#1e1e2e"/>
+
+  <!-- Box 1: PRD in Claude -->
+  <rect x="20" y="60" width="140" height="80" fill="#313244" rx="8" ry="8"/>
+  <text x="90" y="95" class="label">PRD.md</text>
+  <text x="90" y="114" class="sublabel">Written in Claude</text>
+  <text x="90" y="130" class="sublabel">already done ✓</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="162" y1="100" x2="198" y2="100" class="arrow"/>
+  <text x="180" y="92" class="arrow-label">reads</text>
+
+  <!-- Box 2: Claude Code -->
+  <rect x="200" y="60" width="140" height="80" fill="#1e3a5f" rx="8" ry="8" stroke="#89b4fa" stroke-width="1.5"/>
+  <text x="270" y="95" class="label">Claude Code</text>
+  <text x="270" y="114" class="sublabel">reads CLAUDE.md</text>
+  <text x="270" y="130" class="sublabel">no human steps</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="342" y1="100" x2="378" y2="100" class="arrow"/>
+  <text x="360" y="92" class="arrow-label">runs</text>
+
+  <!-- Box 3: Fin CLI -->
+  <rect x="380" y="60" width="140" height="80" fill="#2a1f3d" rx="8" ry="8" stroke="#cba6f7" stroke-width="1.5"/>
+  <text x="450" y="95" class="label">Fin CLI</text>
+  <text x="450" y="114" class="sublabel">intercom setup</text>
+  <text x="450" y="130" class="sublabel">--articles-from ./docs</text>
+
+  <!-- Arrow 3→4 -->
+  <line x1="522" y1="100" x2="558" y2="100" class="arrow"/>
+  <text x="540" y="92" class="arrow-label">deploys</text>
+
+  <!-- Box 4: Fin Live -->
+  <rect x="560" y="60" width="200" height="80" fill="#1a3a2a" rx="8" ry="8" stroke="#a6e3a1" stroke-width="1.5"/>
+  <text x="660" y="88" class="label">Fin Live ✓</text>
+  <text x="660" y="107" class="sublabel">Help center published</text>
+  <text x="660" y="122" class="sublabel">AI agent active</text>
+  <text x="660" y="137" class="sublabel">Messenger snippet ready</text>
+
+  <!-- Bottom label -->
+  <text x="390" y="175" font-family="-apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif" font-size="12" fill="#585b70" text-anchor="middle">One Claude Code session. No platform back-and-forth. No vendor dependency.</text>
+</svg>

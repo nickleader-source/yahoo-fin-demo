@@ -1,16 +1,37 @@
 # Yahoo Finance — Fin AI Agent Demo
 
-A working example of going from a PRD to a live Fin deployment in a single Claude Code session. No manual setup, no platform back-and-forth.
+> *"I already have a PRD using another AI. Why do I have to come and do it on your platform again?"*
+> — Yahoo Finance PM
 
-## The starting point
+This repo is the answer. A working example of going from a Claude-written PRD to a live Fin deployment in a single session — no manual setup, no platform back-and-forth, no vendor dependency.
 
-`PRD.md` is a real Yahoo Finance CX PRD written in Claude — covering the top 5 inbound support categories (800K monthly contacts). That's the only input.
+---
 
-## What this repo contains
+## The flow
+
+![PRD to live Fin in one Claude Code session](assets/flow-diagram.svg)
+
+---
+
+## What the CLI actually does
+
+![Terminal demo showing intercom setup --plan output](assets/terminal-demo.svg)
+
+Every command above is real and executable. Add your `INTERCOM_TOKEN` and drop `--plan` to deploy.
+
+---
+
+## How it compares to your current setup
+
+![Sierra SDK vs Fin comparison](assets/comparison.svg)
+
+---
+
+## What's in this repo
 
 ```
-PRD.md          ← The PRD written in Claude. This is the only starting point.
-CLAUDE.md       ← Claude Code reads this and runs the deployment autonomously.
+PRD.md          ← The only starting point. A Yahoo Finance CX brief written in Claude.
+CLAUDE.md       ← Claude Code reads this and runs the full deployment autonomously.
 docs/           ← 5 help articles generated from the PRD, ready to publish.
   account-login-issues.md
   alerts-and-notifications.md
@@ -18,6 +39,8 @@ docs/           ← 5 help articles generated from the PRD, ready to publish.
   portfolio-tracking.md
   yahoo-finance-plus.md
 ```
+
+---
 
 ## Run it yourself (2 minutes)
 
@@ -41,30 +64,6 @@ Fin is live.
 
 ---
 
-## What the CLI does (actual output)
-
-Running `--plan` against this repo produces the following 4-step deployment plan:
-
-```
-Steps to complete Intercom setup:
-
-1. intercom messenger snippet --format html
-
-2. intercom help-center create -f name="Yahoo Finance Help"
-
-3. intercom articles create -f title="Account Login Issues" -F body=@docs/account-login-issues.md
-   intercom articles create -f title="Alerts And Notifications" -F body=@docs/alerts-and-notifications.md
-   intercom articles create -f title="Data And Quotes" -F body=@docs/data-and-quotes.md
-   intercom articles create -f title="Portfolio Tracking" -F body=@docs/portfolio-tracking.md
-   intercom articles create -f title="Yahoo Finance Plus" -F body=@docs/yahoo-finance-plus.md
-
-4. intercom fin manifest
-```
-
-Every command is real and executable. Add your token and drop `--plan` to deploy.
-
----
-
 ## The agentic version (Claude Code)
 
 Clone this repo and open it in [Claude Code](https://claude.ai/code). It reads `CLAUDE.md` automatically and will:
@@ -78,10 +77,8 @@ The full flow — PRD to live Fin — in one Claude Code session, with no coding
 
 ---
 
-## Why this matters
+## Why this matters for Yahoo Finance
 
-Yahoo Finance's team already uses Claude to write PRDs. This demo shows that the same Claude session that produces the PRD can also deploy it — no recreation, no back-and-forth, no vendor dependency.
+Yahoo Finance's team already uses Claude to write PRDs. This demo shows that the same Claude session that produces the PRD can also deploy it — no recreation on another platform, no back-and-forth, no vendor doing the heavy lifting.
 
-> "I already have a PRD using another AI. Why do I have to come and do it on your platform again?" — Yahoo Finance PM
-
-This is the answer.
+Your team owns the configuration. Updates happen in your tools, on your timeline.
