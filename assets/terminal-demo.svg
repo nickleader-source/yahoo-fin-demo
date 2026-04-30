@@ -1,22 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="780" height="480" viewBox="0 0 780 480">
-  <defs>
-    <style>
-      .window { fill: #1e1e2e; rx: 10; }
-      .titlebar { fill: #313244; }
-      .dot-red { fill: #f38ba8; }
-      .dot-yellow { fill: #f9e2af; }
-      .dot-green { fill: #a6e3a1; }
-      .title-text { font-family: -apple-system, 'SF Pro Text', 'Helvetica Neue', sans-serif; font-size: 12px; fill: #cdd6f4; text-anchor: middle; }
-      .prompt { font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace; font-size: 13px; fill: #89b4fa; }
-      .cmd { font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace; font-size: 13px; fill: #cdd6f4; }
-      .output { font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace; font-size: 13px; fill: #a6adc8; }
-      .step-num { font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace; font-size: 13px; fill: #cba6f7; }
-      .step-cmd { font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace; font-size: 13px; fill: #89dceb; }
-      .success { font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace; font-size: 13px; fill: #a6e3a1; }
-      .dim { font-family: 'SF Mono', 'Fira Code', 'Menlo', monospace; font-size: 12px; fill: #585b70; }
-    </style>
-  </defs>
-
   <!-- Window background -->
   <rect width="780" height="480" rx="10" ry="10" fill="#1e1e2e"/>
 
@@ -25,74 +7,63 @@
   <rect y="18" width="780" height="20" fill="#313244"/>
 
   <!-- Window dots -->
-  <circle cx="20" cy="19" r="6" class="dot-red"/>
-  <circle cx="40" cy="19" r="6" class="dot-yellow"/>
-  <circle cx="60" cy="19" r="6" class="dot-green"/>
+  <circle cx="20" cy="19" r="6" fill="#f38ba8"/>
+  <circle cx="40" cy="19" r="6" fill="#f9e2af"/>
+  <circle cx="60" cy="19" r="6" fill="#a6e3a1"/>
 
   <!-- Title -->
-  <text x="390" y="24" class="title-text">yahoo-fin-demo — intercom setup --plan</text>
-
-  <!-- Content starts at y=56 (38px titlebar + 18px padding) -->
+  <text x="390" y="24" font-family="-apple-system, Helvetica Neue, sans-serif" font-size="12" fill="#cdd6f4" text-anchor="middle">yahoo-fin-demo — intercom setup --plan</text>
 
   <!-- Line 1: prompt + command -->
-  <text x="20" y="68">
-    <tspan class="prompt">~/yahoo-fin-demo </tspan>
-    <tspan class="cmd">npx @intercom/cli setup --plan --company-name "Yahoo Finance" --articles-from ./docs</tspan>
+  <text x="20" y="68" font-family="Menlo, Monaco, Courier New, monospace" font-size="13">
+    <tspan fill="#89b4fa">~/yahoo-fin-demo </tspan><tspan fill="#cdd6f4">npx @intercom/cli setup --plan --company-name "Yahoo Finance" --articles-from ./docs</tspan>
   </text>
-
-  <!-- Blank line spacer -->
 
   <!-- Output header -->
-  <text x="20" y="98" class="output">Steps to complete Intercom setup:</text>
+  <text x="20" y="98" font-family="Menlo, Monaco, Courier New, monospace" font-size="13" fill="#a6adc8">Steps to complete Intercom setup:</text>
 
   <!-- Step 1 -->
-  <text x="20" y="128">
-    <tspan class="step-num">1. </tspan>
-    <tspan class="step-cmd">intercom messenger snippet --format html</tspan>
+  <text x="20" y="130" font-family="Menlo, Monaco, Courier New, monospace" font-size="13">
+    <tspan fill="#cba6f7">1. </tspan><tspan fill="#89dceb">intercom messenger snippet --format html</tspan>
   </text>
-  <text x="36" y="146" class="dim">→ generate install snippet for yahoo.com</text>
+  <text x="36" y="148" font-family="Menlo, Monaco, Courier New, monospace" font-size="12" fill="#585b70">→ generate install snippet for yahoo.com</text>
 
   <!-- Step 2 -->
-  <text x="20" y="172">
-    <tspan class="step-num">2. </tspan>
-    <tspan class="step-cmd">intercom help-center create -f name="Yahoo Finance Help"</tspan>
+  <text x="20" y="174" font-family="Menlo, Monaco, Courier New, monospace" font-size="13">
+    <tspan fill="#cba6f7">2. </tspan><tspan fill="#89dceb">intercom help-center create -f name="Yahoo Finance Help"</tspan>
   </text>
-  <text x="36" y="190" class="dim">→ create help center collection</text>
+  <text x="36" y="192" font-family="Menlo, Monaco, Courier New, monospace" font-size="12" fill="#585b70">→ create help center collection</text>
 
   <!-- Step 3 -->
-  <text x="20" y="216">
-    <tspan class="step-num">3. </tspan>
-    <tspan class="output">Publish 5 articles from ./docs</tspan>
+  <text x="20" y="218" font-family="Menlo, Monaco, Courier New, monospace" font-size="13">
+    <tspan fill="#cba6f7">3. </tspan><tspan fill="#a6adc8">Publish 5 articles from ./docs</tspan>
   </text>
-  <text x="36" y="234" class="step-cmd">intercom articles create -f title="Account Login Issues"        -F body=@docs/account-login-issues.md</text>
-  <text x="36" y="252" class="step-cmd">intercom articles create -f title="Alerts And Notifications"    -F body=@docs/alerts-and-notifications.md</text>
-  <text x="36" y="270" class="step-cmd">intercom articles create -f title="Data And Quotes"             -F body=@docs/data-and-quotes.md</text>
-  <text x="36" y="288" class="step-cmd">intercom articles create -f title="Portfolio Tracking"          -F body=@docs/portfolio-tracking.md</text>
-  <text x="36" y="306" class="step-cmd">intercom articles create -f title="Yahoo Finance Plus"          -F body=@docs/yahoo-finance-plus.md</text>
+  <text x="36" y="236" font-family="Menlo, Monaco, Courier New, monospace" font-size="13" fill="#89dceb">intercom articles create -f title="Account Login Issues"       -F body=@docs/account-login-issues.md</text>
+  <text x="36" y="254" font-family="Menlo, Monaco, Courier New, monospace" font-size="13" fill="#89dceb">intercom articles create -f title="Alerts And Notifications"   -F body=@docs/alerts-and-notifications.md</text>
+  <text x="36" y="272" font-family="Menlo, Monaco, Courier New, monospace" font-size="13" fill="#89dceb">intercom articles create -f title="Data And Quotes"            -F body=@docs/data-and-quotes.md</text>
+  <text x="36" y="290" font-family="Menlo, Monaco, Courier New, monospace" font-size="13" fill="#89dceb">intercom articles create -f title="Portfolio Tracking"         -F body=@docs/portfolio-tracking.md</text>
+  <text x="36" y="308" font-family="Menlo, Monaco, Courier New, monospace" font-size="13" fill="#89dceb">intercom articles create -f title="Yahoo Finance Plus"         -F body=@docs/yahoo-finance-plus.md</text>
 
   <!-- Step 4 -->
-  <text x="20" y="332">
-    <tspan class="step-num">4. </tspan>
-    <tspan class="step-cmd">intercom fin manifest</tspan>
+  <text x="20" y="334" font-family="Menlo, Monaco, Courier New, monospace" font-size="13">
+    <tspan fill="#cba6f7">4. </tspan><tspan fill="#89dceb">intercom fin manifest</tspan>
   </text>
-  <text x="36" y="350" class="dim">→ verify Fin is active on workspace</text>
+  <text x="36" y="352" font-family="Menlo, Monaco, Courier New, monospace" font-size="12" fill="#585b70">→ verify Fin is active on workspace</text>
 
   <!-- Divider -->
-  <line x1="20" y1="368" x2="760" y2="368" stroke="#313244" stroke-width="1"/>
+  <line x1="20" y1="370" x2="760" y2="370" stroke="#313244" stroke-width="1"/>
 
   <!-- Success line -->
-  <text x="20" y="392" class="success">✓  Ready to deploy. Remove --plan and add your INTERCOM_TOKEN to go live.</text>
+  <text x="20" y="394" font-family="Menlo, Monaco, Courier New, monospace" font-size="13" fill="#a6e3a1">✓  Ready to deploy. Remove --plan and add your INTERCOM_TOKEN to go live.</text>
 
-  <!-- Next prompt -->
-  <text x="20" y="420">
-    <tspan class="prompt">~/yahoo-fin-demo </tspan>
-    <tspan class="cmd">export INTERCOM_TOKEN=••••••••••••••••••••</tspan>
+  <!-- Next prompt lines -->
+  <text x="20" y="422" font-family="Menlo, Monaco, Courier New, monospace" font-size="13">
+    <tspan fill="#89b4fa">~/yahoo-fin-demo </tspan><tspan fill="#cdd6f4">export INTERCOM_TOKEN=••••••••••••••••••••</tspan>
   </text>
-  <text x="20" y="448">
-    <tspan class="prompt">~/yahoo-fin-demo </tspan>
-    <tspan class="cmd">npx @intercom/cli setup --company-name "Yahoo Finance" --articles-from ./docs</tspan>
+  <text x="20" y="450" font-family="Menlo, Monaco, Courier New, monospace" font-size="13">
+    <tspan fill="#89b4fa">~/yahoo-fin-demo </tspan><tspan fill="#cdd6f4">npx @intercom/cli setup --company-name "Yahoo Finance" --articles-from ./docs</tspan>
   </text>
 
-  <!-- Blinking cursor -->
-  <rect x="20" y="458" width="8" height="14" fill="#89b4fa" opacity="0.8"/>
+  <!-- Cursor -->
+  <rect x="20" y="460" width="8" height="14" fill="#89b4fa" opacity="0.8"/>
 </svg>
